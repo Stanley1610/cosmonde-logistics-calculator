@@ -50,6 +50,25 @@
   </style>
 </head>
 <body>
+  
+  <script>
+  const PASSWORD = "Cosmonde2026!";
+
+  const saved = localStorage.getItem("cosmonde_access");
+
+  if (saved !== "ok") {
+    const input = prompt("Zadajte interné heslo Cosmonde:");
+
+    if (input === PASSWORD) {
+      localStorage.setItem("cosmonde_access", "ok");
+    } else {
+      document.body.innerHTML = "<h2 style='font-family:Arial;padding:40px'>Prístup zamietnutý.</h2>";
+      throw new Error("Unauthorized");
+    }
+  }
+</script>
+  
+<div class="wrap">
 <div class="wrap">
   <div class="header">
     <div class="brand">
